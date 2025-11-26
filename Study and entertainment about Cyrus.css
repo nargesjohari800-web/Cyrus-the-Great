@@ -1,0 +1,183 @@
+/* -------------------------------
+   فونت‌ها
+-------------------------------- */
+@font-face {
+    font-family: nastaligh;
+    src: url(./font/IranNastaliq&Help-fontyab.com/IranNastaliq.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: naznin;
+    src: url(./font/Far_Nazanin/Far_Nazanin.ttf);
+}
+
+/* -------------------------------
+   تنظیمات کلی
+-------------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 238, 207);
+    font-family: naznin, sans-serif;
+    direction: rtl;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------------------
+   هدر
+-------------------------------- */
+header {
+    font-family: nastaligh;
+    text-align: center;
+    background-color: #ac976e;
+    color: white;
+    padding: 20px 10px;
+}
+header h1 { margin: 0; font-size: 2.5rem; }
+header h3 { margin-top: 10px; font-size: 1.2rem; }
+
+/* -------------------------------
+   منو لینک‌ها
+-------------------------------- */
+ul {
+    margin: 0;
+    padding: 10px 20px;
+    text-align: right;
+}
+li {
+    display: inline-block;
+    margin-right: 15px;
+    font-family: nastaligh;
+    color: #d4af37;
+    font-size: 18px;
+}
+a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover { color: brown; }
+
+/* -------------------------------
+   جدول منابع / محتوا
+-------------------------------- */
+.table-container {
+    flex: 1;
+    overflow-x: auto;
+    padding: 30px 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 700px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: right;
+    vertical-align: top;
+}
+th {
+    background-color: #807156;
+    color: white;
+    text-align: center;
+}
+tr:nth-child(even) { background-color: #fdf6e9; }
+
+/* -------------------------------
+   فوتر
+-------------------------------- */
+footer {
+    background-color: #ac976e;
+    color: white;
+    padding: 30px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.copy {
+    margin-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+    padding-top: 12px;
+    font-size: 13px;
+}
+
+/* -------------------------------
+   واکنش‌گرایی / ریسپانسیو
+-------------------------------- */
+
+/* لپ‌تاپ بزرگ: 1334px تا 1018px */
+@media (max-width: 1334px) and (min-width: 1018px) {
+    .table-container { padding: 24px; }
+    th, td { font-size: 0.95rem; padding: 10px; }
+}
+
+/* تبلت بزرگ تا 1024px */
+@media (max-width: 1024px) {
+    .table-container { padding: 20px; }
+    table { min-width: 100%; }
+    th, td { font-size: 0.9rem; }
+}
+
+/* تبلت کوچک / موبایل بزرگ: 768px تا 481px */
+@media (max-width: 768px) and (min-width: 481px) {
+    table { min-width: 100%; border: 0; }
+    th { display: none; }
+    tr { display: block; margin-bottom: 15px; border-bottom: 2px solid #ddd; }
+    td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        font-weight: bold;
+        color: #807156;
+        white-space: nowrap;
+    }
+}
+
+/* موبایل کوچک: کمتر از 480px */
+@media (max-width: 480px) {
+    table { border: 0; min-width: 100%; }
+    th { display: none; }
+    tr { display: block; margin-bottom: 15px; border-bottom: 2px solid #ddd; }
+    td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        font-weight: bold;
+        color: #807156;
+        white-space: nowrap;
+    }
+}
+
+/* هدر و منو در موبایل */
+@media (max-width: 700px) {
+    header h1 { font-size: 1.8rem; }
+    header h3 { font-size: 1rem; }
+    li { margin-right: 10px; font-size: 16px; display: inline-block; }
+}
+
+/* فوتر همیشه پایین */
+body { display: flex; flex-direction: column; min-height: 100vh; }
+.table-container { flex: 1; }

@@ -1,0 +1,238 @@
+/* -------------------------------
+   فونت‌ها
+-------------------------------- */
+@font-face {
+    font-family: nastaligh;
+    src: url(./font/IranNastaliq&Help-fontyab.com/IranNastaliq.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: naznin;
+    src: url(./font/Far_Nazanin/Far_Nazanin.ttf);
+}
+
+/* -------------------------------
+   تنظیمات کلی
+-------------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 238, 207);
+    font-family: naznin, sans-serif;
+    direction: rtl;
+}
+
+/* -------------------------------
+   هدر
+-------------------------------- */
+header {
+    font-family: nastaligh;
+    text-align: center;
+    background-color: #ac976e;
+    color: white;
+    padding: 20px 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* -------------------------------
+   منو لینک‌ها
+-------------------------------- */
+ul {
+    margin: 0;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+li {
+    display: inline-block;
+    margin-right: 15px;
+    font-family: nastaligh;
+    color: #d4af37;
+    font-size: 18px;
+}
+
+a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: brown;
+}
+
+/* -------------------------------
+   کانتینر مرکزی
+-------------------------------- */
+.main-container {
+    max-width: 1295px; /* مشابه باکس‌های اصلی صفحه قبل */
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: wheat;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+/* fade-in افکت برای بخش‌ها */
+.main-container h3, .main-container section, .table-container {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -------------------------------
+   جدول منابع
+-------------------------------- */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    background-color: #ffeecf;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 700px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: right;
+    vertical-align: top;
+}
+
+th {
+    background-color: #807156;
+    color: white;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #fdf6e9;
+}
+
+/* responsive جدول */
+@media (max-width: 1024px) {
+    table { min-width: 100%; }
+}
+
+@media (max-width: 768px) {
+    table { border: 0; min-width: 100%; }
+    th { display: none; }
+    tr { display: block; margin-bottom: 15px; border-bottom: 2px solid #ddd; }
+    td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        font-weight: bold;
+        color: #807156;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    td::before { left: 5px; top: 10px; font-size: 0.85rem; }
+}
+
+/* -------------------------------
+   درباره ما متن
+-------------------------------- */
+.main-container section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: right;
+}
+
+.main-container section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* -------------------------------
+   فوتر
+-------------------------------- */
+footer {
+    background-color: #ac976e;
+    color: white;
+    padding: 30px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+    padding-top: 12px;
+    font-size: 13px;
+}
+
+/* -------------------------------
+   Media Queries
+-------------------------------- */
+@media (max-width: 1024px) {
+    .main-container { width: 80%; padding: 15px; }
+    header h1 { font-size: 2.2rem; }
+    header h3 { font-size: 1.1rem; }
+    li { font-size: 16px; }
+    .table-container { padding: 15px; }
+    .main-container section p { font-size: 0.95rem; }
+}
+
+@media (max-width: 768px) {
+    .main-container { width: 90%; padding: 12px; }
+    header h1 { font-size: 1.9rem; }
+    header h3 { font-size: 1rem; }
+    li { font-size: 14px; margin-right: 10px; }
+    .table-container { padding: 12px; }
+    .main-container section p { font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+    .main-container { width: 95%; padding: 10px; }
+    header h1 { font-size: 1.6rem; }
+    header h3 { font-size: 0.9rem; }
+    li { font-size: 13px; margin-right: 8px; }
+    .main-container section p { font-size: 0.85rem; }
+}
+
+img {
+  width: 47px;
+  height: auto;
+  margin-top: -9px;
+  cursor: pointer;
+}

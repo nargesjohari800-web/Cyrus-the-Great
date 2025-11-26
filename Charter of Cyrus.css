@@ -1,0 +1,336 @@
+/* -------------------------------
+   فونت‌ها
+-------------------------------- */
+@font-face {
+    font-family: nastaligh;
+    src: url(./font/IranNastaliq&Help-fontyab.com/IranNastaliq.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: naznin;
+    src: url(./font/Far_Nazanin/Far_Nazanin.ttf);
+}
+
+/* -------------------------------
+   تنظیمات کلی
+-------------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 238, 207);
+    font-family: naznin, sans-serif;
+    direction: rtl;
+}
+
+/* -------------------------------
+   هدر
+-------------------------------- */
+header {
+    font-family: nastaligh;
+    text-align: center;
+    width: 100%;
+    background-color: #ac976e;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* -------------------------------
+   منو لینک‌ها
+-------------------------------- */
+ul {
+    margin: 0;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+li {
+    display: inline-block;
+    margin-right: 15px;
+    font-family: nastaligh;
+    color: #d4af37;
+    font-size: 18px;
+}
+
+a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: brown;
+}
+
+/* -------------------------------
+   باکس‌های محتوا
+-------------------------------- */
+.min {
+    position: relative;
+    width: 1295px;
+    min-height: 300px;
+    background-color: wheat;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: width 0.6s ease; /* انیمیشن تغییر عرض */
+    color: #6a3800;
+}
+
+.min img {
+    width: 100%;
+    height: auto;
+    max-height: 422px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.min img.active {
+    filter: brightness(0.7) contrast(1.2);
+}
+
+/* باکس دوم متن */
+/* .min2 {
+    position: relative;
+    width: 0; 
+    max-height: 250px;
+    background-color: rgb(243, 214, 159);
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.7s ease;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow-y: auto;
+} */
+
+/* حالت باز */
+/* .min.show {
+    width: 600px; /* عرض باز شده، متناسب با متن }*/
+
+
+/* .min.show .min2 {
+    width: 100%;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.min h2 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+} */
+ .min2 {
+    position: relative;
+    width: 100%;
+    max-height: 0;      /* حالت بسته: هیچ فضایی اشغال نشود */
+    overflow: hidden;    /* جلوگیری از نمایش محتوا */
+    background-color: rgb(243, 214, 159);
+    opacity: 0;
+    transform: translateY(-10px); /* کمی بالا برای افکت انیمیشن */
+    transition: all 0.5s ease;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;    /* padding اولیه صفر */
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* حالت باز */
+.min.show .min2 {
+    max-height: 400px; /* ارتفاع باز شده، متناسب با متن */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    padding: 15px; /* وقتی باز شد padding فعال می‌شود */
+}
+
+
+/* دکمه داخل باکس */
+.btn-top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.btn-top-right:hover {
+    transform: scale(1.1);
+    background-color: rgba(0,0,0,0.9);
+}
+
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.btn-top-right.rotating {
+    animation: rotate360 0.3s linear;
+}
+
+.min2 h3 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.min2 p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* -------------------------------
+   فوتر
+-------------------------------- */
+footer {
+    background-color: #ac976e;
+    color: white;
+    padding: 30px 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 12px;
+    font-size: 14px;
+}
+
+/* -------------------------------
+   ریسپانسیو
+-------------------------------- */
+@media (max-width: 1024px) {
+    .min {
+        max-width: 90%;
+        padding: 15px;
+    }
+    .min h2 { font-size: 1.3rem; }
+    .min2 h3 { font-size: 1.1rem; }
+    .min2 p { font-size: 0.95rem; }
+}
+
+@media (max-width: 768px) {
+    ul { text-align: center; }
+    li { margin-right: 10px; font-size: 16px; display: inline-block; }
+    .btn-top-right { left: -20px; width: 35px; height: 35px; }
+}
+
+@media (max-width: 600px) {
+    .min { min-height: auto; padding: 10px; }
+    .min h2 { font-size: 1.1rem; }
+    .min2 h3 { font-size: 1rem; }
+    .min2 p { font-size: 0.9rem; }
+    .btn-top-right { width: 30px; height: 30px; left: -15px; font-size: 18px; }
+}
+
+@media (max-width: 400px) {
+    .min h2 { font-size: 1rem; }
+    .min2 h3 { font-size: 0.95rem; }
+    .min2 p { font-size: 0.85rem; }
+}
+
+
+/* تبلت: 700px تا 1024px */
+@media (max-width: 1024px) {
+    .min {
+        width: 80%; /* باکس بزرگ‌تر روی تبلت */
+    }
+
+    .min.show {
+        width: 90%; /* متن باز شده بزرگ‌تر */
+    }
+
+    .min2 p {
+        font-size: 0.95rem;
+    }
+}
+
+/* موبایل: کمتر از 700px */
+@media (max-width: 700px) {
+    .min {
+        width: 95%; /* تقریباً کل عرض صفحه */
+    }
+
+    .min.show {
+        width: 95%; /* متن کامل عرض صفحه */
+    }
+
+    .min2 p {
+        font-size: 0.9rem;
+    }
+
+    .btn-top-right {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+/* ریسپانسیو مخصوص عرض 1018px تا 1334px */
+@media (min-width: 1018px) and (max-width: 1334px) {
+    .min {
+        width: 90%;          /* باکس اصلی کمی کوچکتر از دسکتاپ کامل */
+    }
+
+    .min.show {
+        width: 95%;          /* وقتی باز شد، کمی بزرگتر شود */
+    }
+
+    .min2 {
+        max-height: 400px;   /* ارتفاع مناسب متن */
+        padding: 15px;
+    }
+
+    .min2 h3 {
+        font-size: 1.2rem;   /* کمی کوچکتر از دسکتاپ کامل */
+    }
+
+    .min2 p {
+        font-size: 0.98rem;  /* متن متناسب با اندازه باکس */
+    }
+
+    .btn-top-right {
+        width: 38px;
+        height: 38px;
+        font-size: 19px;
+    }
+}
