@@ -3,7 +3,8 @@
 -------------------------------- */
 @font-face {
     font-family: nastaligh;
-    src: url(./font/IranNastaliq&Help-fontyab.com/IranNastaliq.ttf) format("truetype");
+    src: url( ./IranNastaliq.ttf)
+   format("truetype");
 }
 
 @font-face {
@@ -365,6 +366,7 @@ footer {
         width: 31%; 
     }
 }
+
 
 
 
