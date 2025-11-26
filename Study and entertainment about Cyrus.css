@@ -3,7 +3,8 @@
 -------------------------------- */
 @font-face {
     font-family: nastaligh;
-    src: url(./font/IranNastaliq&Help-fontyab.com/IranNastaliq.ttf) format("truetype");
+    src: url( ./IranNastaliq.ttf)
+   format("truetype");
 }
 
 @font-face {
@@ -181,3 +182,4 @@ footer {
 /* فوتر همیشه پایین */
 body { display: flex; flex-direction: column; min-height: 100vh; }
 .table-container { flex: 1; }
+
